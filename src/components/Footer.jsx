@@ -1,4 +1,5 @@
-import { NAV, SITE } from '../data/content.js'
+import { NAV, PRIVACY_NOTE, SITE } from '../data/content.js'
+import { apiEnabled } from '../lib/api.js'
 import { GithubIcon, Logo } from './shared.jsx'
 
 export default function Footer() {
@@ -31,6 +32,11 @@ export default function Footer() {
           <GithubIcon size={16} /> Website ini open source — dibangun dengan React.js
         </a>
       </div>
+      {apiEnabled && (
+        <div className="container">
+          <p className="footer-privacy">{PRIVACY_NOTE}</p>
+        </div>
+      )}
     </footer>
   )
 }

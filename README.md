@@ -14,6 +14,16 @@ npm run build     # hasil build ada di folder dist/
 npm run preview   # cek hasil build
 ```
 
+## Backend
+
+Pencatatan kunjungan dan formulir kontak memakai backend FastAPI di folder
+[`../devsysbless-api`](../devsysbless-api/README.md).
+
+- **Lokal:** jalankan `docker compose up -d` di folder [`../devsysbless-proxy`](../devsysbless-proxy/README.md), lalu di folder backend.
+  `npm run dev` otomatis terhubung ke `http://localhost/devsysbless` (diatur di `.env.development`).
+- **Produksi:** isi variable `VITE_API_URL` di GitHub (Settings → Secrets and variables → Actions → Variables).
+  Jika kosong, website tetap jalan tanpa pencatatan kunjungan, dan formulir kembali memakai `mailto:`.
+
 ## Mengubah isi website
 
 Hampir semua teks (tagline, layanan, visi & misi, FAQ, email, dll.) ada di satu file:

@@ -33,6 +33,10 @@ export const SITE = {
   repo: 'https://github.com/devsysbless/devsysbless.github.io',
 }
 
+// Ditampilkan bila backend aktif (pencatatan kunjungan & formulir lewat server)
+export const PRIVACY_NOTE =
+  'Website ini mencatat data kunjungan — alamat IP, perkiraan lokasi, serta jenis perangkat & browser — untuk statistik dan keamanan. Data Anda tidak dijual atau dibagikan ke pihak lain.'
+
 export const NAV = [
   { href: '#layanan', label: 'Layanan' },
   { href: '#prinsip', label: 'Prinsip' },

@@ -10,8 +10,13 @@ import Process from './components/Process.jsx'
 import Faq from './components/Faq.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import { startTracking } from './lib/api.js'
 
 export default function App() {
+  useEffect(() => {
+    startTracking()
+  }, [])
+
   // Animasi muncul saat elemen ber-class "reveal" masuk layar
   useEffect(() => {
     const items = document.querySelectorAll('.reveal')
