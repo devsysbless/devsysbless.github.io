@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Sys Bless — Sistem yang Membawa Berkah, Bukan Beban</title>
+    <meta
+      name="description"
+      content="Dev Sys Bless: jasa aplikasi web, otomasi, server & cloud, data & dashboard, serta aplikasi pemantau jaringan. Dikerjakan langsung oleh praktisi 15 tahun, dijelaskan dengan bahasa sehari-hari."
+    />
+    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:title" content="Dev Sys Bless" />
+    <meta property="og:description" content="Sistem yang Membawa Berkah, Bukan Beban." />
+    <meta property="og:url" content="https://devsysbless.github.io/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Pasang tema sebelum halaman tampil agar tidak berkedip
+      try {
+        var t = localStorage.getItem('dsb-theme')
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
