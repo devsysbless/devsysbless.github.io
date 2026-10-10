@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { ExternalLink, KeyRound, LogOut, Moon, RefreshCw, Sun } from 'lucide-react'
+import { ExternalLink, Eye, EyeOff, LogIn, LogOut, Moon, RefreshCw, Sun } from 'lucide-react'
 import { Logo } from '../components/shared.jsx'
 import { API_URL, AuthError, adminGet, clearKey, loadKey, saveKey } from './adminApi.js'
 import Breakdown from './Breakdown.jsx'
@@ -35,6 +35,7 @@ function ThemeButton() {
 
 function Login({ onLogin }) {
   const [key, setKey] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [remember, setRemember] = useState(false)
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -65,16 +66,28 @@ function Login({ onLogin }) {
           </div>
         </div>
         <label>
-          Admin key
-          <input
-            type="password"
-            required
-            autoFocus
-            autoComplete="current-password"
-            value={key}
-            onChange={(e) => setKey(e.target.value)}
-            placeholder="Isi dengan ADMIN_API_KEY"
-          />
+          Password
+          <span className="pw-field">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              required
+              autoFocus
+              autoComplete="current-password"
+              spellCheck={false}
+              value={key}
+              onChange={(e) => setKey(e.target.value)}
+              placeholder="Masukkan password"
+            />
+            <button
+              type="button"
+              className="pw-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? 'Sembunyikan password' : 'Tampilkan password'}
+              title={showPassword ? 'Sembunyikan password' : 'Tampilkan password'}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </span>
         </label>
         <label className="check">
           <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
@@ -82,7 +95,7 @@ function Login({ onLogin }) {
         </label>
         {error && <p className="dash-error">{error}</p>}
         <button className="btn btn-primary btn-block" disabled={busy}>
-          <KeyRound size={18} /> {busy ? 'Memeriksa…' : 'Masuk'}
+          <LogIn size={18} /> {busy ? 'Memeriksa…' : 'Masuk'}
         </button>
         <p className="login-note">Terhubung ke {API_URL}</p>
       </form>

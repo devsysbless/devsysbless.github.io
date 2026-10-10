@@ -533,18 +533,50 @@
   font-size: 0.9rem;
 }
 
-.login input[type='password'] {
+.pw-field {
+  position: relative;
+  display: block;
+}
+
+.pw-field input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 12px 48px 12px 14px;
   border-radius: 12px;
   border: 1.5px solid var(--border);
   background: var(--bg);
   font-size: 0.95rem;
+  font-weight: 400;
 }
 
-.login input[type='password']:focus {
+/* Sembunyikan tombol "lihat password" bawaan Edge, supaya tidak dobel dengan tombol kita */
+.pw-field input::-ms-reveal,
+.pw-field input::-ms-clear {
+  display: none;
+}
+
+.pw-field input:focus {
   outline: none;
   border-color: var(--primary);
+}
+
+.pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.pw-toggle:hover {
+  color: var(--primary);
+  background: var(--bg-alt);
 }
 
 .login-brand {

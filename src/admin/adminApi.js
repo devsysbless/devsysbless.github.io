@@ -11,7 +11,8 @@ export async function adminGet(path, key) {
   } catch {
     throw new Error(`Tidak bisa terhubung ke API (${API_URL}). Pastikan backend sedang berjalan.`)
   }
-  if (res.status === 401) throw new AuthError('Admin key salah.')
+  if (res.status === 401) throw new AuthError('Password salah.')
+  if (res.status === 503) throw new Error('Login dashboard belum diaktifkan di server.')
   const data = await res.json().catch(() => ({}))
   if (!res.ok) throw new Error(typeof data.detail === 'string' ? data.detail : `Gagal memuat data (${res.status}).`)
   return data
