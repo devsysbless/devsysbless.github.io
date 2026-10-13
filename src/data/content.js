@@ -1,5 +1,5 @@
 import {
-  CodeXml,
+  MonitorSmartphone,
   Workflow,
   ServerCog,
   Database,
@@ -66,10 +66,16 @@ export const HERO_STATUS = [
 export const SERVICES = [
   {
     id: 'aplikasi',
-    icon: CodeXml,
-    title: 'Aplikasi Web Sesuai Kebutuhan',
-    plain: 'Aplikasi yang mengikuti cara kerja usaha Anda — bukan Anda yang dipaksa mengikuti aplikasinya.',
-    examples: ['Sistem kasir & stok barang', 'Aplikasi pemesanan / reservasi', 'Portal internal & absensi', 'Dashboard admin'],
+    icon: MonitorSmartphone,
+    title: 'Aplikasi Sesuai Kebutuhan',
+    plain:
+      'Web, HP, maupun komputer — aplikasi yang mengikuti cara kerja usaha Anda, bukan Anda yang dipaksa mengikuti aplikasinya.',
+    examples: [
+      'Aplikasi web & dashboard admin',
+      'Aplikasi HP (Android & iOS)',
+      'Aplikasi desktop (Windows)',
+      'Kasir, stok, pemesanan & absensi',
+    ],
   },
   {
     id: 'otomasi',
@@ -160,7 +166,7 @@ export const PROBLEMS = [
     text: 'Ingin "go digital" tapi bingung mulai dari mana tanpa boros biaya.',
     service: 'aplikasi',
     answer:
-      'Mulai dari yang paling berdampak dulu, kecil tapi langsung terasa. Aplikasi dibangun bertahap sesuai anggaran, bukan sekaligus mahal di depan.',
+      'Mulai dari yang paling berdampak dulu, kecil tapi langsung terasa. Bentuknya bisa website, aplikasi HP, atau aplikasi komputer — kita pilih yang paling pas, lalu dibangun bertahap sesuai anggaran.',
     firstStep: 'Ceritakan alur kerja usaha Anda dari pesanan masuk sampai barang/jasa diterima pelanggan.',
   },
 ]
@@ -254,6 +260,10 @@ export const FAQ = [
     a: 'Justru untuk Anda kami ada. Anda cukup menceritakan masalahnya dengan bahasa sehari-hari, urusan teknis biar kami yang terjemahkan. Setiap keputusan akan dijelaskan dulu sampai Anda paham.',
   },
   {
+    q: 'Apakah hanya bisa membuat website?',
+    a: 'Tidak. Selain aplikasi web, kami juga membuat aplikasi HP (Android & iOS) dan aplikasi desktop untuk komputer kantor. Kami bantu pilihkan bentuk yang paling pas dengan kebutuhan dan anggaran — sering kali satu sistem bisa dipakai dari komputer dan HP sekaligus.',
+  },
+  {
     q: 'Berapa biayanya?',
     a: 'Tergantung besar-kecilnya kebutuhan. Konsultasi awal gratis, dan sebelum mulai Anda akan menerima usulan tertulis berisi rincian biaya. Pekerjaan juga bisa dibagi beberapa tahap agar sesuai anggaran.',
   },
@@ -280,7 +290,7 @@ export const FAQ = [
 ]
 
 export const CONTACT_NEEDS = [
-  'Aplikasi web',
+  'Aplikasi (web / HP / desktop)',
   'Otomasi pekerjaan',
   'Server / cloud',
   'Data & dashboard',
