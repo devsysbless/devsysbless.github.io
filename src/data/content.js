@@ -20,6 +20,10 @@ import {
   PackageCheck,
   LifeBuoy,
 } from 'lucide-react'
+import { yearsOfExperience } from './experience.js'
+
+// Lama pengalaman (tahun sekarang − 2011), dihitung saat halaman dibuka
+export const YEARS_EXPERIENCE = yearsOfExperience()
 
 // ============================================================
 // Data utama usaha — ubah di sini, tampilan ikut berubah.
@@ -46,7 +50,7 @@ export const NAV = [
 ]
 
 export const HERO_STATS = [
-  { value: '15', unit: 'tahun', label: 'pengalaman di dunia IT' },
+  { value: String(YEARS_EXPERIENCE), unit: 'tahun', label: 'pengalaman di dunia IT' },
   { value: '4', unit: 'peran', label: 'developer, engineer, DevOps & data' },
   { value: '1', unit: 'pintu', label: 'satu kontak untuk semua urusan sistem' },
   { value: '100', unit: '%', label: 'kode & akses jadi milik Anda' },

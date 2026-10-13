@@ -1,5 +1,5 @@
 import { ArrowRight, CircleCheck, Sparkles } from 'lucide-react'
-import { HERO_STATS, HERO_STATUS, SITE } from '../data/content.js'
+import { HERO_STATS, HERO_STATUS, SITE, YEARS_EXPERIENCE } from '../data/content.js'
 
 export default function Hero() {
   return (
@@ -15,8 +15,8 @@ export default function Hero() {
           </h1>
           <p className="hero-sub">
             {SITE.name} membantu usaha kecil hingga menengah merapikan urusan teknologi — dari aplikasi, otomasi,
-            server, sampai data. Dijelaskan dengan bahasa sehari-hari, dikerjakan langsung oleh praktisi berpengalaman
-            15 tahun.
+            server, sampai data. Dijelaskan dengan bahasa sehari-hari, dikerjakan langsung oleh praktisi berpengalaman{' '}
+            {YEARS_EXPERIENCE} tahun.
           </p>
           <div className="hero-cta">
             <a href="#kontak" className="btn btn-primary">
