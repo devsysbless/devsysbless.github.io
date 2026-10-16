@@ -7,6 +7,7 @@ import Principles from './components/Principles.jsx'
 import Journey from './components/Journey.jsx'
 import VisionMission from './components/VisionMission.jsx'
 import Process from './components/Process.jsx'
+import Office from './components/Office.jsx'
 import Faq from './components/Faq.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -50,6 +51,7 @@ export default function App() {
         <Journey />
         <VisionMission />
         <Process />
+        <Office />
         <Faq />
         <Contact />
       </main>

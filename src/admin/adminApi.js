@@ -4,10 +4,14 @@ const KEY_NAME = 'dsb-admin-key'
 
 export class AuthError extends Error {}
 
-export async function adminGet(path, key) {
+export const adminGet = (path, key) => adminRequest('GET', path, key)
+
+export const adminPost = (path, key) => adminRequest('POST', path, key)
+
+async function adminRequest(method, path, key) {
   let res
   try {
-    res = await fetch(`${API_URL}${path}`, { headers: { 'X-Admin-Key': key } })
+    res = await fetch(`${API_URL}${path}`, { method, headers: { 'X-Admin-Key': key } })
   } catch {
     throw new Error(`Tidak bisa terhubung ke API (${API_URL}). Pastikan backend sedang berjalan.`)
   }

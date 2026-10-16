@@ -96,6 +96,33 @@ export function startTracking() {
     })
 }
 
+// Asisten AI di kantor pixel. Hanya isi percakapan (sudah disamarkan) yang dikirim — tanpa visitor_id.
+export async function getAssistantStatus() {
+  if (!apiEnabled) return { enabled: false }
+  try {
+    const res = await fetch(`${API_URL}/api/assistant/status`)
+    return res.ok ? await res.json() : { enabled: false }
+  } catch {
+    return { enabled: false }
+  }
+}
+
+export async function askAssistant(messages) {
+  let res
+  try {
+    res = await fetch(`${API_URL}/api/assistant/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages }),
+    })
+  } catch {
+    throw new Error('Tidak bisa terhubung. Periksa koneksi internet Anda.')
+  }
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Asisten sedang sibuk. Coba lagi sebentar.')
+  return data.reply
+}
+
 export async function sendContact(form) {
   const res = await fetch(`${API_URL}/api/contact`, {
     method: 'POST',

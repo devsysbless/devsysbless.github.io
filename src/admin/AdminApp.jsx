@@ -5,6 +5,7 @@ import { API_URL, AuthError, adminGet, clearKey, loadKey, saveKey } from './admi
 import Breakdown from './Breakdown.jsx'
 import DailyChart from './DailyChart.jsx'
 import MessagesList from './MessagesList.jsx'
+import OfficePanel from './OfficePanel.jsx'
 import VisitsTable from './VisitsTable.jsx'
 import { DEVICE_LABELS, fmtDuration, fmtNumber, fmtTime } from './format.js'
 
@@ -124,6 +125,7 @@ export default function AdminApp() {
   const [loading, setLoading] = useState(false)
   const [refreshTick, setRefreshTick] = useState(0)
   const [updatedAt, setUpdatedAt] = useState(null)
+  const [aiEnabled, setAiEnabled] = useState(false)
 
   const logout = useCallback(() => {
     clearKey()
@@ -225,6 +227,14 @@ export default function AdminApp() {
       <main className="container dash-main">
         {error && <p className="dash-error">{error}</p>}
 
+        <OfficePanel
+          adminKey={adminKey}
+          days={days}
+          refreshTick={refreshTick}
+          onAuthError={logout}
+          onAiStatus={setAiEnabled}
+        />
+
         {stats && (
           <>
             <section className="tiles">
@@ -266,7 +276,7 @@ export default function AdminApp() {
           </>
         )}
 
-        <MessagesList adminKey={adminKey} refreshTick={refreshTick} />
+        <MessagesList adminKey={adminKey} refreshTick={refreshTick} aiEnabled={aiEnabled} />
         <VisitsTable adminKey={adminKey} refreshTick={refreshTick} />
 
         <p className="dash-foot">

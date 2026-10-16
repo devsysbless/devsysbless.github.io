@@ -510,6 +510,236 @@
   color: var(--text-muted);
 }
 
+/* Kantor AI */
+.office-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.office-off,
+.office-privacy {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.office-off {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+}
+
+.office-off svg {
+  color: var(--status-warning);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.office-privacy {
+  margin-top: 10px;
+  font-size: 0.76rem;
+}
+
+.office-privacy svg {
+  color: var(--status-good);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.office-side {
+  display: grid;
+  gap: 14px;
+}
+
+.agent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.agent-list li {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.agent-list li.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.agent-list button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.agent-name {
+  font-weight: 700;
+}
+
+.agent-name small {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.agent-list p {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.spin {
+  animation: spin 1.2s linear infinite;
+}
+
+.office-summary {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  font-size: 0.86rem;
+}
+
+.office-summary strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.office-summary small {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.office-summary p {
+  white-space: pre-wrap;
+}
+
+.office-log-admin {
+  margin-top: 14px;
+  font-size: 0.82rem;
+}
+
+.office-log-admin summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.office-log-admin ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.office-log-admin li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.office-log-admin time,
+.office-log-admin small {
+  color: var(--text-muted);
+}
+
+.office-log-admin .office-err {
+  color: var(--status-critical);
+}
+
+.office-visitors {
+  margin-top: 10px;
+}
+
+/* Catatan resepsionis AI di pesan masuk */
+.ai-box {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed color-mix(in srgb, var(--primary) 45%, transparent);
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  font-size: 0.86rem;
+}
+
+.ai-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-weight: 700;
+}
+
+.ai-head > svg {
+  color: var(--primary);
+}
+
+.ai-head small {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ai-box summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.ai-draft {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+}
+
+.ai-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.ai-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+  justify-self: start;
+}
+
+@media (max-width: 900px) {
+  .office-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Login */
 .login-wrap {
   min-height: 100vh;

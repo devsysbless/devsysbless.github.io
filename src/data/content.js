@@ -289,6 +289,35 @@ export const FAQ = [
   },
 ]
 
+// Kantor pixel + asisten AI (section #kantor). Hanya tampil bila API & AI aktif.
+export const OFFICE = {
+  eyebrow: 'Kantor Virtual',
+  title: 'Mampir ke kantor kami',
+  lead: 'Kenalan dengan Sasa, asisten virtual Dev Sys Bless. Tanyakan apa saja seputar layanan kami, jawabannya langsung muncul.',
+  canvasLabel:
+    'Ilustrasi kantor pixel Dev Sys Bless: tiga karyawan virtual (Rara, Dimas, Sasa) di meja masing-masing, dan Anda di lobi.',
+  you: 'Anda',
+  hint: 'Klik karakter untuk berkenalan.',
+  status: { online: 'Asisten virtual · online', typing: 'Asisten virtual · sedang mengetik…' },
+  inputLabel: 'Pertanyaan untuk Sasa',
+  send: 'Kirim',
+  agents: [
+    { id: 'resepsionis', name: 'Rara', role: 'Resepsionis', intro: 'Halo! Pesan dari formulir kontak saya yang terima.' },
+    { id: 'analis', name: 'Dimas', role: 'Analis', intro: 'Saya merapikan angka-angka supaya mudah dibaca.' },
+    { id: 'asisten', name: 'Sasa', role: 'Asisten', intro: 'Ada yang ingin ditanyakan? Ketik di kolom chat ya!' },
+  ],
+  greeting:
+    'Halo, saya Sasa 👋 Saya bisa menjelaskan layanan Dev Sys Bless, cara kerja, sampai bentuk aplikasi yang cocok untuk usaha Anda. Mau tanya apa?',
+  suggestions: ['Layanannya apa saja?', 'Bisa buat aplikasi HP?', 'Berapa biayanya?', 'Usaha saya kecil, cocok?'],
+  placeholder: 'Tulis pertanyaan Anda…',
+  typing: 'Sedang mengetik…',
+  privacyNote:
+    'Jangan menulis data pribadi. Nomor HP, email, dan alamat otomatis disamarkan sebelum dikirim ke AI, dan isi chat tidak disimpan.',
+  redactedNote: 'Data pribadi disamarkan',
+  disclaimer: 'Jawaban dibuat AI dan bisa keliru. Untuk kepastian, hubungi kami lewat formulir kontak.',
+  contactCta: 'Konsultasi lewat formulir',
+}
+
 export const CONTACT_NEEDS = [
   'Aplikasi (web / HP / desktop)',
   'Otomasi pekerjaan',
