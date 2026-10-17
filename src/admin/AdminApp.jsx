@@ -98,7 +98,6 @@ function Login({ onLogin }) {
         <button className="btn btn-primary btn-block" disabled={busy}>
           <LogIn size={18} /> {busy ? 'Memeriksa…' : 'Masuk'}
         </button>
-        <p className="login-note">Terhubung ke {API_URL}</p>
       </form>
       <div className="login-theme">
         <ThemeButton />
